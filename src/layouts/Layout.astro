@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  .textShadow {
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  html {
+    font-family: "Protest Riot", sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+
+/* Personalizando a barra de rolagem para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px; 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #e3f2e1, #f1f8f6); 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #a5d6a7, #33b339); 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #81c784, #033506); 
+}
+
+/* Personalizando a barra de rolagem para o Firefox */
+* {
+    scrollbar-width: thin; /* 'auto' ou 'thin', para uma barra de rolagem mais fina */
+    scrollbar-color: #a5d6a7 #e3f2e1; /* Cores sólidas para o Firefox, pois o degradê não é suportado diretamente */
+}
+
+
+
+</style>

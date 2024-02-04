@@ -1,0 +1,14 @@
+---
+import "highlight.js/styles/atom-one-dark.min.css"
+---
+
+<pre>
+    <code class=" language-javascript text-base opacity-55">
+        <slot />
+    </code>
+</pre>
+
+<script>
+    import hljs from 'highlight.js';
+    hljs.highlightAll();
+</script>

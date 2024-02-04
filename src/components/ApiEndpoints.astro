@@ -1,0 +1,49 @@
+---
+
+---
+<div class="my-4">
+    <h2 class="text-1xl text-green-300 underline">API endpoints:</h2>
+    <ul class="list-disc list-inside mt-4 flex flex-col gap-4">
+      <li class="">
+        <a href="/api/dinosaurs" class="text-blue-300 underline"> /api/dinosaurs</a>
+        <p class="textShadow">Get a list of dinosaurs, with their names.</p>
+        <p class="textShadow">You can also specify a query with the follow atributes</p>
+        <ul class="list-disc list-inside ml-6">
+          <li>
+            <code>period</code> - The period the dinosaur lived in, such as jurassic, late-cretaceous, early-cretaceous, etc.
+          </li>
+          <li>
+            <code>diet</code> - The diet of the dinosaur.
+          </li>
+          <li>
+            <code>region</code> - The region the dinosaur lived in, such as europe, south-america, asia, etc.
+          </li>
+          <li>
+            <code>type</code> - The type of dinosaur, such as terrestrial, aquatic and flyer.
+          </li>
+          <li>
+            <code>weight</code> - The weight of the dinosaur.
+          </li>
+          <li>
+            <code>height</code> - The height of the dinosaur.
+          </li>
+          <li>
+            <code>length</code> - The length of the dinosaur.
+          </li>
+          <h3 class="text-lg">For example:</h3>
+          <a href="/api/dinosaurs?period=late-cretaceous&region=south-america&diet=carnivore" class="text-blue-300 underline">
+           {"/api/dinosaurs?period=late-cretaceous&region=south-america&diet=carnivore"}
+          </a>
+        </ul>
+      </li>
+      <li>
+        <a href="/api/dinosaurs/abelisaurus" class="text-blue-300 underline">
+          /api/dinosaurs/:name
+        </a>
+        <p class="textShadow">
+          Get information about a specific dinosaur, by Name.
+        </p>
+        <small>You can replace <code>abelisaurus</code> with any dinosaur name.</small>
+      </li>
+    </ul>
+</div>

@@ -1,0 +1,108 @@
+---
+import axios from "axios";
+
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/Logo.astro";
+import Container from "../components/Container.astro";
+import GetDinosaurs from "../components/examples/GetDinosaurs.astro";
+import ApiEndpoints from "../components/ApiEndpoints.astro";
+import Footer from "../components/Footer.astro";
+
+const response = await axios.get("https://dinoapi.brunosouzadev.com/api/dinosaurs/total");
+const currentDinos = response.data;
+---
+
+<Layout title="DinoAPI - Connecting You to the Lost World of Dinosaurs">
+  <main class="mt-4">
+    <video
+      autoplay
+      loop
+      muted
+      class="fixed top-0 left-0 z-[-1] w-full h-full object-cover"
+      src="videos/dinobg.mp4"
+    >
+    </video>
+
+    <div
+      class="px-3 flex flex-col items-center justify-center w-full h-full"
+    >
+      <Logo />
+      <p class="text-2xl text-white textShadow">
+        A simple API for dinosaur data
+      </p>
+      <p>
+        Current dinos records in the api: <span
+          class="text-zinc-600 textShadow text-lg">{currentDinos.total}</span
+        >
+      </p>
+      <p>
+        This number will increase significantly over time! More than 1000
+        dinosaurs are being catalogued.
+      </p>
+    </div>
+
+    <Container>
+      <h1 class="text-3xl text-green-300 underline">
+        Dinosaur data for curious people
+      </h1>
+      <div class="flex flex-col gap-2 text-xl">
+        <p class="textShadow">
+          Welcome to DinoAPI! This intuitive API serves as your gateway to the
+          fascinating world of dinosaurs, offering detailed information and
+          insights. Whether you're looking to retrieve a comprehensive list of
+          dinosaur species or delve into the specifics of a particular dinosaur,
+          DinoAPI has you covered.
+        </p>
+        <p class="textShadow">
+          Designed with versatility in mind, DinoAPI is the perfect tool for
+          crafting your very own dinosaur-themed websites or applications. It's
+          not just for developers; educators, students, and dinosaur enthusiasts
+          can leverage this resource to expand their knowledge and share the
+          wonders of these ancient creatures with others.
+        </p>
+        <p class="textShadow">
+          Accessibility is at the heart of DinoAPI. It is completely free to
+          use, requires no API key, and emphasizes ease of use. We've tailored
+          the API to ensure the information provided is both accessible and
+          valuable to all users, regardless of their technical background or knowlodge about dinosaur data.
+        </p>
+
+        <ApiEndpoints />
+
+        <h2 class="text-1xl text-green-300 underline">API usage example:</h2>
+        <GetDinosaurs />
+		<h3 class="text-3xl text-green-300 underline">Planned endpoints</h3>
+		<p class="textShadow">We are planning to add more endpoints to the API, such as:</p>
+		<div>
+			<ul class="list-disc list-inside">
+				<li>
+					<a href="/api/animals" class="text-blue-300 underline"> /api/animals</a>
+					- Get a list of prehistorical animals and useful information about them
+				</li>
+				<li>
+					<a href="/api/plants" class="text-blue-300 underline"> /api/plants</a>
+					- Get a list of prehistorical plants and useful information about them
+				</li>
+				<li>
+					<a href="/api/paleontologists" class="text-blue-300 underline"> /api/paleontologists</a>
+					- Get a list of paleontologists and useful information about them
+				</li>
+				<li>
+					<a href="/api/periods" class="text-blue-300 underline"> /api/periods</a>
+					- Get a list of prehistorical periods and useful information about them
+				</li>
+				<li>
+					<a href="/api/events" class="text-blue-300 underline"> /api/events</a>
+					- Get a list of prehistorical events and useful information about them
+				</li>
+				<li>
+					<a href="/api/locations" class="text-blue-300 underline"> /api/locations</a>
+					- Get a list of prehistorical locations and useful information about them
+				</li>
+			</ul>
+		</div>
+      </div>
+    </Container>
+  </main>
+  <Footer/>
+</Layout>
