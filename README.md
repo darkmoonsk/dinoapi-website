@@ -55,4 +55,3 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato.
 
 [LinkedIn](https://www.linkedin.com/in/brunosouzadkm/) | [Email](contato@brunosouzadev.com)
-```
